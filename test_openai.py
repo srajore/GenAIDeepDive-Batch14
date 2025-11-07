@@ -1,14 +1,15 @@
 from openai import OpenAI
-
-from dotenv import load_dotenv
-
 import os
 
-load_dotenv(override=True)
+#from dotenv import load_dotenv
 
-mykey = os.getenv("MY_API_KEY")
+#load_dotenv(override=True)
 
-client = OpenAI(api_key=mykey)
+key = os.getenv("OPENAI_API_KEY")
+
+print(key)
+
+client = OpenAI()
 
 response = client.responses.create(
     model="gpt-5-nano",
